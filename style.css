@@ -13,6 +13,7 @@ section {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    transition-delay: 1.2s;
 }
 
 .box {
@@ -44,10 +45,11 @@ section {
     width: 350px;
     height: 50px;
     border-radius: 25px 0 0 25px;
+    border: 1px #fff solid;
 }
 
 .change-bg .input-group .btn {
-    background: #666;
+    background-image: linear-gradient(to right, #E55D87 0%, #5FC3E4  51%, #E55D87  100%);
     color: #fff;
     width: 150px;
     height: 50px;
@@ -55,8 +57,81 @@ section {
     cursor: pointer;
     margin-left: -7px;
     transition: .5s;
+    background-size: 200% auto;
+    border: 1px #fff solid;
 }
 
+
 .change-bg .input-group .btn:hover {
-    background: #222;
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+  }
+ 
+
+
+.bg-text {
+    position: absolute;
+    font-size: 100px;
+    color: rgba(0, 0, 0, .1);
+    top: 150px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
+
+.bg-text.fade {
+    animation: animateFade 1.2s linear;
+}
+
+@keyframes animateFade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.clipPath-circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    clip-path: circle(0% at 0 0);
+    transition: clip-path 1.2s ease-out;
+}
+
+.clipPath-circle.active {
+    clip-path: circle(150% at 0 0);
+
+}
+
+
+
+@media screen and (max-width: 580px) {
+    .change-bg h1 {
+     font-size: 20px;
+     padding-left: 10px;
+     padding-right: 10px;
+    }
+
+    .change-bg .input-group .newColor-input {
+        width: 250px;
+        height: 50px;
+    }
+  }
+
+  
+@media screen and (max-width: 398px) {
+    .change-bg h1 {
+     font-size: 20px;
+     padding-left: 10px;
+     padding-right: 10px;
+    }
+
+    .change-bg .input-group .newColor-input {
+        width: 180px;
+        height: 50px;
+    }
+  }
